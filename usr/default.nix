@@ -4,7 +4,10 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "zcy";
-  home.homeDirectory = "/Users/zcy";
+  home.homeDirectory =
+    if pkgs.stdenv.isDarwin
+    then "/Users/zcy"
+    else "/home/zcy";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

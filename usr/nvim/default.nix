@@ -9,6 +9,7 @@
 
   imports = [
     ./lsp
+    ./snacks
   ];
 
   programs.neovim.extraPackages = [

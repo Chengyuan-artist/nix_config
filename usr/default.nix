@@ -18,6 +18,8 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
+  news.display = "silent";
+
   imports = [
     ./nvim
   ];
@@ -84,4 +86,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.ripgrep = {
+    enable = true;
+    arguments = [
+      "--no-ignore-vcs"
+    ];
+  };
 }

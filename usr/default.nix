@@ -18,6 +18,10 @@
   # release notes.
   home.stateVersion = "26.05"; # Please read the comment before changing.
 
+  imports = [
+    ./nvim
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -39,6 +43,8 @@
     # '')
     pkgs.syncthing
     pkgs.clash-meta
+    pkgs.nil
+    pkgs.zig
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

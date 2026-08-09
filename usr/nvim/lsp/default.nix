@@ -17,6 +17,13 @@
                 -- Enable inlay hints by default on attach
                 vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
               end
+              vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+              vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename)
+
+              -- make sure lsp/vim native indent(share/nvim/runtime/indent/python.vim)
+              -- don't override my setting
+              vim.opt.tabstop = 2
+              vim.opt.shiftwidth = 2
             end,
           })
 

@@ -17,6 +17,7 @@
     ./lsp
     ./snacks
     ./mini-nvim.nix
+    ./blink-cmp.nix
   ];
 
   programs.neovim.extraPackages = [

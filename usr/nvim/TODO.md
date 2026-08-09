@@ -1,4 +1,4 @@
-- [ ] add completion support
+- [x] add completion support
 - [x] intent setting, display and input
 - [ ] more language sever
   - [x] nix support

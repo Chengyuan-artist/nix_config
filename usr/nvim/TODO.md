@@ -1,0 +1,6 @@
+- [ ] add completion support
+- [ ] intent setting, display and input
+- [ ] more language sever
+  - [ ] nix support
+  - [ ] metals support
+  - [ ] c support

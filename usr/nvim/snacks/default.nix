@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./picker/config.nix
+    ./image/config.nix
   ];
   programs.neovim = {
     plugins = [{
@@ -10,6 +11,7 @@
         require("snacks").setup({
           ${import ./scroll/lua.nix}
           ${import ./picker/lua.nix}
+          ${import ./image/lua.nix}
         })
       '';
     }];

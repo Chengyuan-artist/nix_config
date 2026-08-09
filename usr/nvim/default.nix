@@ -17,6 +17,23 @@
 
     initLua = /*lua*/ ''
       vim.opt.clipboard = "unnamedplus"
+
+      -- SSH 环境使用 OSC 52，将内容复制到客户端剪贴板
+      if vim.env.SSH_TTY or vim.env.SSH_CONNECTION then
+        local osc52 = require("vim.ui.clipboard.osc52")
+
+        vim.g.clipboard = {
+          name = "OSC 52",
+          copy = {
+            ["+"] = osc52.copy("+"),
+            ["*"] = osc52.copy("*"),
+          },
+          paste = {
+            ["+"] = osc52.paste("+"),
+            ["*"] = osc52.paste("*"),
+          },
+        }
+      end
     '';
   };
 

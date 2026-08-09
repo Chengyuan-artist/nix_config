@@ -5,6 +5,12 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    extraConfig = /*vim*/ ''
+      set expandtab
+      set tabstop=2
+      set shiftwidth=2
+    '';
   };
 
   imports = [

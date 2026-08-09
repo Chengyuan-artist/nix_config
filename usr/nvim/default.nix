@@ -69,5 +69,14 @@
         vim.g.zig_fmt_autosave = 0
       '';
     }
+    {
+      plugin = pkgs.vimPlugins.render-markdown-nvim;
+      type = "lua";
+      config = /*lua*/ ''
+        require('render-markdown').setup({
+          completions = { lsp = { enabled = true } },
+        })
+      '';
+    }
   ];
 }

@@ -22,6 +22,7 @@
       #  xcolor
       #;})
       pkgs.ghostscript
+      pkgs.imagemagick
     ];
   };
 }

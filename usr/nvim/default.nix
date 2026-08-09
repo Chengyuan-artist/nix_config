@@ -10,6 +10,7 @@
   imports = [
     ./lsp
     ./snacks
+    ./mini-nvim.nix
   ];
 
   programs.neovim.extraPackages = [

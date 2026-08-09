@@ -19,7 +19,7 @@
     config = /*lua*/ ''
       require("blink.cmp").setup({
         keymap = { preset = 'none',
-          ['<Tab>']   = { 'select_next', 'fallback' },
+          ['<Tab>']   = { 'select_and_accept', 'fallback' },
           ['<S-Tab>'] = { 'select_prev', 'fallback' },
           ['<Up>']   = { function(cmp) return cmp.select_prev({ auto_insert = false }) end, 'fallback' },
           ['<Down>'] = { function(cmp) return cmp.select_next({ auto_insert = false }) end, 'fallback' },

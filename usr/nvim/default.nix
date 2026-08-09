@@ -10,6 +10,13 @@
       set expandtab
       set tabstop=2
       set shiftwidth=2
+
+      xmap <Leader>a <Plug>(EasyAlign)
+      nmap <Leader>a <Plug>(EasyAlign)
+    '';
+
+    initLua = /*lua*/ ''
+      vim.opt.clipboard = "unnamedplus"
     '';
   };
 
@@ -25,6 +32,7 @@
   ];
 
   programs.neovim.plugins = [
+    pkgs.vimPlugins.vim-easy-align
     {
       plugin = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       type = "lua";

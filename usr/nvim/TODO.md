@@ -4,3 +4,5 @@
   - [x] nix support
   - [ ] metals support
   - [ ] c support
+  - [ ] markdown support
+    - [x] align tools

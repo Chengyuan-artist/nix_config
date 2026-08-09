@@ -73,6 +73,16 @@
         vim.keymap.set("i", "<C-x><C-w>", function()
           insert_file_path(vim.fn.getcwd())
         end, { desc = "Insert file path from cwd" })
+
+        vim.api.nvim_create_autocmd('LspAttach', {
+          callback = function(args)
+            vim.keymap.set('n', 'gd', Snacks.picker.lsp_definitions)
+            vim.keymap.set('n', 'gD', Snacks.picker.lsp_declarations)
+            vim.keymap.set('n', 'gt', Snacks.picker.lsp_type_definitions)
+            vim.keymap.set('n', 'gr', Snacks.picker.lsp_references)
+            vim.keymap.set('n', 'gi', Snacks.picker.lsp_implementations)
+          end,
+        })
       end
     '';
   };

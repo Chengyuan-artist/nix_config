@@ -74,6 +74,7 @@
       type = "lua";
       config = /*lua*/ ''
         require('render-markdown').setup({
+          render_modes = { 'n', 'i', 'c', 't' },
           completions = { lsp = { enabled = true } },
         })
       '';

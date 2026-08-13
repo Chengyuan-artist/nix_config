@@ -152,7 +152,7 @@
                   url = "https://github.com/dwyl/english-words/raw/8179fe68775df3f553ef19520db065228e65d1d3/words_alpha.txt";
                   sha256 = "sha256-PtDJRhDYvPfBG7tJxWqknHI00ytmgk35H1VBaeVy2kg=";
                 }}" },
-                dictionary_directories = { vim.fn.expand('~/Gist/dicts/blink-cmp') },
+                -- dictionary_directories = { vim.fn.expand('~/Gist/dicts/blink-cmp') },
               },
             },
           },

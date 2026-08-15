@@ -74,8 +74,63 @@
       type = "lua";
       config = /*lua*/ ''
         require('render-markdown').setup({
-          render_modes = { 'n', 'i', 'c', 't' },
           completions = { lsp = { enabled = true } },
+            -- 保留标题背景高亮，但不替换 #。
+          heading = {
+            sign = false,
+          },
+
+          -- 只保留代码背景，不隐藏围栏或增加语言标题。
+          code = {
+            conceal_delimiters = false,
+            language = false,
+            border = "none",
+          },
+
+          -- 这些组件会用不同宽度的字符替换原始标记。
+          --dash = {
+          --  enabled = false,
+          --},
+          --bullet = {
+          --  enabled = false,
+          --},
+          --checkbox = {
+          --  enabled = false,
+          --},
+          --quote = {
+          --  enabled = false,
+          --},
+
+          -- 保留表格字符替换，但不填充列宽、不添加上下边框。
+          pipe_table = {
+            cell = "raw",
+            border_enabled = false,
+          },
+
+          -- 不在链接前增加图标。
+          link = {
+            enabled = false,
+          },
+
+          -- LaTeX 转换后的字符宽度可能与源码不同。
+          --latex = {
+          --  enabled = false,
+          --},
+
+          -- 不隐藏 HTML 注释。
+          html = {
+            comment = {
+              conceal = false,
+            },
+          },
+
+          -- normal/insert 模式始终显示原始 Markdown 标记。
+          win_options = {
+            conceallevel = {
+              default = 0,
+              rendered = 0,
+            },
+          },
         })
       '';
     }

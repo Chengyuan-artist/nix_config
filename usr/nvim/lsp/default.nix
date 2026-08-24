@@ -39,14 +39,7 @@
             float = {
               source = true,  -- Show the source (LSP server name)
             },
-            signs = {
-              text = {
-                -- Do not show 'H' in the sign/number column.
-                -- The main reason is harper_ls throws many hint diagnostics
-                [vim.diagnostic.severity.HINT] = "",
-              },
-            },
-          })
+         })
 
           -- Use LspAttach autocommand to only map the following keys
           -- after the language server attaches to the current buffer

@@ -3,7 +3,21 @@
   imports = [
     # zig
     {programs.neovim={initLua="vim.lsp.enable('zls')\n";extraPackages=[pkgs.zls];};}
+    # nix
     {programs.neovim={initLua="vim.lsp.enable('nixd')\n";extraPackages=[pkgs.nixd];};}
+    # emmylua
+    {
+      programs.neovim = {
+        initLua = /*lua*/''
+          vim.lsp.config('emmylua_ls', {
+            cmd = { 'emmylua_ls', '--log-path', 'none' },
+          })
+          vim.lsp.enable('emmylua_ls')
+        '';
+        extraPackages = [ pkgs.emmylua-ls ];
+      };
+      home.packages = [ pkgs.emmylua-check ];
+    }
   ];
   programs.neovim = {
     plugins = [

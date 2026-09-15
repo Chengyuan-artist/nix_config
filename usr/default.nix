@@ -93,4 +93,8 @@
       "--no-ignore-vcs"
     ];
   };
+
+  programs.fzf = {
+    enable = true;
+  };
 }

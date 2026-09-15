@@ -10,9 +10,6 @@
       set expandtab
       set tabstop=2
       set shiftwidth=2
-
-      xmap <Leader>a <Plug>(EasyAlign)
-      nmap <Leader>a <Plug>(EasyAlign)
     '';
 
     initLua = /*lua*/ ''
@@ -51,6 +48,13 @@
   programs.neovim.plugins = [
     pkgs.vimPlugins.vim-easy-align
     {
+      plugin = pkgs.vimPlugins.tokyonight-nvim;
+      type = "lua";
+      config = ''
+        vim.cmd[[colorscheme tokyonight-night]]
+      '';
+    }
+    {
       plugin = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
       type = "lua";
       config = ''
@@ -70,68 +74,31 @@
       '';
     }
     {
-      plugin = pkgs.vimPlugins.render-markdown-nvim;
+      plugin = pkgs.vimPlugins.todo-comments-nvim;
       type = "lua";
-      config = /*lua*/ ''
-        require('render-markdown').setup({
-          completions = { lsp = { enabled = true } },
-            -- 保留标题背景高亮，但不替换 #。
-          heading = {
-            sign = false,
+      config = ''
+        require("todo-comments").setup({
+          -- 可以在此自定义配置选项
+          signs = true, -- 标语栏显示图标
+          keywords = {
+            FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "ISSUE" } },
+            TODO = { icon = " ", color = "info" },
+            HACK = { icon = " ", color = "warning" },
+            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+            PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+            NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
           },
-
-          -- 只保留代码背景，不隐藏围栏或增加语言标题。
-          code = {
-            conceal_delimiters = false,
-            language = false,
-            border = "none",
-          },
-
-          -- 这些组件会用不同宽度的字符替换原始标记。
-          --dash = {
-          --  enabled = false,
-          --},
-          --bullet = {
-          --  enabled = false,
-          --},
-          --checkbox = {
-          --  enabled = false,
-          --},
-          --quote = {
-          --  enabled = false,
-          --},
-
-          -- 保留表格字符替换，但不填充列宽、不添加上下边框。
-          pipe_table = {
-            cell = "raw",
-            border_enabled = false,
-          },
-
-          -- 不在链接前增加图标。
-          link = {
-            enabled = false,
-          },
-
-          -- LaTeX 转换后的字符宽度可能与源码不同。
-          --latex = {
-          --  enabled = false,
-          --},
-
-          -- 不隐藏 HTML 注释。
-          html = {
-            comment = {
-              conceal = false,
-            },
-          },
-
-          -- normal/insert 模式始终显示原始 Markdown 标记。
-          win_options = {
-            conceallevel = {
-              default = 0,
-              rendered = 0,
-            },
+          highlight = {
+            comments_only = false,
           },
         })
+      '';
+    }
+    {
+      plugin = pkgs.vimPlugins.gitsigns-nvim;
+      type = "lua";
+      config = ''
+        require('gitsigns').setup()
       '';
     }
   ];

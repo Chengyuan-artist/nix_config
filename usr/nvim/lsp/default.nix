@@ -1,6 +1,7 @@
 {pkgs, ...}:
 {
   imports = [
+    ./metals.nix
     # zig
     {programs.neovim={initLua="vim.lsp.enable('zls')\n";extraPackages=[pkgs.zls];};}
     # nix

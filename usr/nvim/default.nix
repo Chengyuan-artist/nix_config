@@ -101,5 +101,42 @@
         require('gitsigns').setup()
       '';
     }
+    {
+      plugin = pkgs.vimPlugins.nvim-tree-lua;
+      type = "lua";
+      config = ''
+        -- disable netrw at the very start of your init.lua
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
+
+        -- optionally enable 24-bit colour
+        vim.opt.termguicolors = true
+
+        -- empty setup using defaults
+        require("nvim-tree").setup({
+          renderer = {
+            -- 使用自定义函数来处理根目录标题的显示
+            root_folder_label = function(path)
+              -- 只截取并显示最后一级文件夹的名字
+              return vim.fs.basename(path)
+            end,
+          },
+          update_focused_file = {
+	          enable = true,
+          },
+        })
+
+        -- 使用 <leader>e 切换显示/关闭 nvim-tree
+        vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+      '';
+    }
+    {
+      plugin = pkgs.vimPlugins.outline-nvim;
+      type = "lua";
+      config = ''
+        require("outline").setup()
+        vim.keymap.set('n', '<leader>o', require('outline').toggle)
+      '';
+    }
   ];
 }

@@ -22,6 +22,7 @@
 
   imports = [
     ./nvim
+    ./clash
   ];
 
   # The home.packages option allows you to install Nix packages into your
@@ -44,7 +45,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.syncthing
-    pkgs.clash-meta
     pkgs.nil
     pkgs.zig
   ];

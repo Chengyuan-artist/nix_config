@@ -1,0 +1,1 @@
+- [ ] use yq to merge rules into config & clean useless config

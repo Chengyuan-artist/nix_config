@@ -13,6 +13,9 @@
     '';
 
     initLua = /*lua*/ ''
+      vim.opt.number = true
+      vim.opt.signcolumn = "number"
+
       vim.opt.clipboard = "unnamedplus"
 
       -- SSH 环境使用 OSC 52，将内容复制到客户端剪贴板
@@ -79,17 +82,14 @@
       config = ''
         require("todo-comments").setup({
           -- 可以在此自定义配置选项
-          signs = true, -- 标语栏显示图标
-          keywords = {
-            FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "ISSUE" } },
-            TODO = { icon = " ", color = "info" },
-            HACK = { icon = " ", color = "warning" },
-            WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-            PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
-            NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-          },
+          signs = false, -- 标语栏显示图标
           highlight = {
+            after = "",
+            pattern = [=[.*<(KEYWORDS)\s*[:：]]=],
             comments_only = false,
+          },
+          search = {
+            pattern = [=[\b(KEYWORDS)[:：]]=], -- ripgrep regex
           },
         })
       '';
@@ -98,7 +98,12 @@
       plugin = pkgs.vimPlugins.gitsigns-nvim;
       type = "lua";
       config = ''
-        require('gitsigns').setup()
+        require('gitsigns').setup({
+          current_line_blame = true,
+          current_line_blame_opts = {
+            delay = 300,
+          },
+        })
       '';
     }
     {

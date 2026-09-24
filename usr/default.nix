@@ -23,8 +23,19 @@
   imports = [
     ./nvim
     ./clash
+    ../modules
   ];
 
+  services.syncthing = {
+    enable = true;
+    overrideFolders = false;
+    overrideDevices = true;
+  };
+
+  systemd.user.services.syncthing.Service.Environment = [
+    "http_proxy=http://127.0.0.1:${toString config.proxyPort}"
+    "https_proxy=http://127.0.0.1:${toString config.proxyPort}"
+  ];
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -44,7 +55,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.syncthing
     pkgs.nil
     pkgs.zig
   ];

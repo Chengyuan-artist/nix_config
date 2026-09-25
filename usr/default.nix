@@ -24,6 +24,7 @@
     ./nvim
     ./clash
     ../modules
+    ./syncthing-gist-ignore.nix
   ];
 
   services.syncthing = {

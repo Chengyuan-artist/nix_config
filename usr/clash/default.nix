@@ -15,4 +15,8 @@
       ExecStart = "${pkgs.mihomo}/bin/mihomo -d %h/Gist/mihomo";
     };
   };
+
+  my.syncthing.Gist-stignore = [
+    "/mihomo/cache.db*"
+  ];
 }

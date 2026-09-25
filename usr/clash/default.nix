@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }:
+
+{
   home.packages = [
     pkgs.mihomo
   ];
@@ -13,6 +15,25 @@
     };
     Service = {
       ExecStart = "${pkgs.mihomo}/bin/mihomo -d %h/Gist/mihomo";
+    };
+  };
+
+  launchd.agents.clash = {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${pkgs.mihomo}/bin/mihomo"
+        "-d"
+        "${config.home.homeDirectory}/Gist/mihomo"
+      ];
+      RunAtLoad = true;
+      KeepAlive = {
+        Crashed = true;
+        SuccessfulExit = false;
+      };
+      ProcessType = "Background";
+      StandardOutPath = "${config.home.homeDirectory}/Library/Logs/mihomo.log";
+      StandardErrorPath = "${config.home.homeDirectory}/Library/Logs/mihomo.err.log";
     };
   };
 

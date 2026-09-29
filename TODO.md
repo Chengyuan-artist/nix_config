@@ -1,0 +1,1 @@
+- [ ]  使用npins和NIX_PATH替代nix-channel以管理确定性

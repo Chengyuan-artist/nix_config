@@ -2,7 +2,7 @@
 - [x] intent setting, display and input
 - [ ] more language sever
   - [x] nix support
-  - [ ] metals support
+  - [x] metals support
   - [ ] c support
   - [x] markdown support
     - [x] align tools    

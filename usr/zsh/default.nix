@@ -3,7 +3,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestion.enable = false;
     syntaxHighlighting.enable = true;
     
     historySubstringSearch.enable = true;
@@ -25,6 +25,9 @@
     initContent = ''
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+      # fzf-tab: 用 Tab 选中（覆盖默认的 tab:down / enter 接受）
+      zstyle ':fzf-tab:*' fzf-bindings 'tab:accept' 'enter:ignore'
     '';
 
     shellAliases = {

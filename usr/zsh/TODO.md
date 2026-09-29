@@ -1,0 +1,1 @@
+- [ ]: add bindkey for vi mode; directly using vi mode?

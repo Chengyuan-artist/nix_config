@@ -23,6 +23,7 @@
   imports = [
     ./nvim
     ./clash
+    ./zsh
     ../modules
     ./syncthing-gist-ignore.nix
   ];

@@ -1,1 +1,1 @@
-- [ ]: add bindkey for vi mode; directly using vi mode?
+- [x]: add bindkey for vi mode; directly using vi mode?

@@ -24,6 +24,7 @@
     ./nvim
     ./clash
     ./zsh
+    ./kitty
     ../modules
     ./syncthing-gist-ignore.nix
   ];

@@ -90,7 +90,6 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     zsh-completions
-    nerd-fonts.fira-code
   ];
     
   home.file.".p10k.zsh".source = ./p10k.zsh;

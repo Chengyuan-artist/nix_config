@@ -21,6 +21,10 @@
 
     localVariables = {
       POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD = true;
+      # Default is lazy: zvm_init runs in precmd, AFTER fzf/initContent, so its
+      # `zvm_bindkey viins '^R' ...` clobbers fzf's Ctrl-R and other bindings.
+      # Init while sourcing the plugin so later bindings win.
+      ZVM_INIT_MODE = "sourcing";
     };
 
     initContent = ''

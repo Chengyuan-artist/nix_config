@@ -67,6 +67,10 @@
     # '')
     pkgs.nil
     pkgs.zig
+    pkgs.wl-clipboard
+    pkgs.man-pages
+    pkgs.wget
+    pkgs.curl
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -113,4 +117,10 @@
       "--no-ignore-vcs"
     ];
   };
+
+  # 从 pacman 迁移的 CLI 工具（第一类，非 GUI）
+  programs.git.enable = true;
+  programs.gh.enable = true;
+  programs.man.enable = true;
+  programs.info.enable = true;
 }

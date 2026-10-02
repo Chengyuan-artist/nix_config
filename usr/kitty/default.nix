@@ -28,5 +28,6 @@
   home.packages = with pkgs;[ 
     nerd-fonts.jetbrains-mono
     nerd-fonts.meslo-lg
+    noto-fonts-color-emoji
   ];
 }

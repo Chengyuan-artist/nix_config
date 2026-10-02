@@ -119,7 +119,16 @@
   };
 
   # 从 pacman 迁移的 CLI 工具（第一类，非 GUI）
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Chengyuan Zhang";
+        email = "1136427613@qq.com";
+      };
+      core.editor = "nvim";
+    };
+  };
   programs.gh.enable = true;
   programs.man.enable = true;
   programs.info.enable = true;

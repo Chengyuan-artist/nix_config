@@ -1,0 +1,11 @@
+[general]
+# 与 niri 的截图目录保持一致
+output-filename = "~/Pictures/Screenshots/satty-%Y%m%d-%H%M%S.png"
+# Enter：先存文件再复制到剪贴板，然后退出
+#actions-on-enter = ["save-to-file", "save-to-clipboard"]
+# Enter: 仅复制到剪贴板
+actions-on-enter = ["save-to-clipboard", "exit"]
+actions-on-escape = ["exit"]
+#early-exit = ["all"]
+# 复制用 wl-copy: 需要带上type防止推断失败
+copy-command = "wl-copy --type image/png"

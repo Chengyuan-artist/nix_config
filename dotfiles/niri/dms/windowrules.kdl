@@ -1,8 +1,14 @@
 // DMS Window Rules - Managed by DankMaterialShell
 // Do not edit manually - changes may be overwritten
 
-// @id=dms-floating-windows @name=DMS Floating Windows
+// @id=wr_1791035521561223296 @name=org.gnome.Loupe
 window-rule {
-    match app-id="^com.danklinux.dms$"
+    match app-id="^org.gnome.Loupe$"
+    open-floating true
+}
+
+// @id=wr_1791038310378605959 @name=com.gabm.satty
+window-rule {
+    match app-id="^com.gabm.satty$"
     open-floating true
 }

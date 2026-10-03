@@ -2,3 +2,4 @@ clash-verge-rev-bin
 google-chrome
 neofetch
 pi-coding-agent-bin
+wechat-bin

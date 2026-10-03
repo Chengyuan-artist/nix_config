@@ -1,7 +1,7 @@
 binds {
     Alt+Ctrl+Q hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Alt+Print hotkey-overlay-title="Screenshot: Window" { spawn "dms" "screenshot" "window"; }
-    Alt+Shift+S hotkey-overlay-title="Screenshot: Region" { spawn "dms" "screenshot"; }
+    Alt+Shift+S hotkey-overlay-title="Screenshot: Region + satty" { spawn "sh" "-c" "dms screenshot region --no-confirm --no-file --no-clipboard --stdout | satty --filename -"; }
     Alt+Space hotkey-overlay-title="Spotlight Bar" { spawn "dms" "ipc" "call" "spotlight-bar" "toggle"; }
     Alt+XF86Launch1 hotkey-overlay-title="Screenshot: Window" { spawn "dms" "screenshot" "window"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }

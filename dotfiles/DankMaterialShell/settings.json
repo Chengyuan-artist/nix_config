@@ -1,4 +1,5 @@
 {
+  "dmsWindowsFloating": false,
   "cornerRadius": 12,
   "controlCenterShowMicPercent": true,
   "appIdSubstitutions": [],
@@ -26,6 +27,7 @@
   "batterySuspendTimeout": 300,
   "batteryProfileName": "1",
   "batteryPostLockMonitorTimeout": 60,
+  "launchPrefix": "env LANG=zh_CN.UTF-8",
   "terminalsAlwaysDark": true,
   "osdPowerProfileEnabled": true,
   "barConfigs": [

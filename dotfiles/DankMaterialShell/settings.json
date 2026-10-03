@@ -20,7 +20,12 @@
     }
   },
   "acLockTimeout": 600,
+  "acProfileName": "2",
   "acPostLockMonitorTimeout": 60,
+  "batteryLockTimeout": 120,
+  "batterySuspendTimeout": 300,
+  "batteryProfileName": "1",
+  "batteryPostLockMonitorTimeout": 60,
   "osdPowerProfileEnabled": true,
   "barConfigs": [
     {

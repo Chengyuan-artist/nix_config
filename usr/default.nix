@@ -25,6 +25,7 @@
     #./clash
     ./zsh
     ./kitty
+    ./yazi.nix
     ../modules
     ./syncthing-gist-ignore.nix
   ];

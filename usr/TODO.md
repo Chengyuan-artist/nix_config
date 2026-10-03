@@ -1,3 +1,4 @@
 - [x] 管理zsh配置，插件，字体
 - [x] 管理kitty配置
 - [x] 管理niri以及desktop应用 
+- [ ] for yazi: 系统反色快捷键

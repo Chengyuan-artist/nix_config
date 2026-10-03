@@ -22,6 +22,8 @@
       map ctrl+0 change_font_size all 0
 
       map --allow-fallback=shifted,ascii kitty_mod+t new_tab_with_cwd
+
+      globinclude dank-*.conf
     '';
   };
 

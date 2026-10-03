@@ -42,13 +42,13 @@ home-manager switch
 ## Archlinux配置
 
 完成archlinux的基本安装，参考[archwiki](https://wiki.archlinux.org/title/Installation_guide)。
-(备忘：sudo -> wheel分组, sddm配置 -> enable)。
-
 
 在仓库根目录下，从文件列表安装软件包（root权限）：
 ```bash
 pacman -S --needed - < arch/pacman.txt
 ```
+
+(备忘：sudo -> wheel分组, sddm配置 -> enable，蓝牙 -> enable bluetooth)。
 
 安装yay，参考[github/yay](https://github.com/Jguer/yay):
 ```bash

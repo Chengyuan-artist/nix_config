@@ -1,5 +1,7 @@
 base
 base-devel
+bluez
+bluez-utils
 dms-shell
 dms-shell-niri
 efibootmgr
@@ -17,10 +19,15 @@ niri
 nix
 noto-fonts-cjk
 openssh
+pipewire-alsa
+pipewire-pulse
+power-profiles-daemon
+qt6-multimedia
 sddm
 sudo
 texinfo
 vim
 wget
+wireplumber
 xwayland-satellite
 zsh

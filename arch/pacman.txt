@@ -22,6 +22,7 @@ niri
 nix
 noto-fonts-cjk
 openssh
+papirus-icon-theme
 pipewire-alsa
 pipewire-pulse
 power-profiles-daemon

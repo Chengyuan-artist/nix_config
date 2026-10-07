@@ -28,6 +28,7 @@
     ./yazi.nix
     ../modules
     ./syncthing-gist-ignore.nix
+    ./pages-ci.nix
   ];
 
   services.syncthing = {
@@ -72,6 +73,9 @@
     pkgs.man-pages
     pkgs.wget
     pkgs.curl
+    pkgs.typst
+    pkgs.drawio
+    pkgs.xvfb-run
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

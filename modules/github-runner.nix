@@ -4,7 +4,8 @@
 # systemd --user service on a non-NixOS host (e.g. Ubuntu/macOS-with-nix).
 #
 # Design constraints (per current requirements):
-#   * Authentication: PAT only (no registration token, no GitHub App).
+#   * Authentication: a PAT (prefixed, e.g. ghp_/github_pat_) or an API
+#     registration token (bare). The flag is chosen automatically.
 #   * No automatic re-registration: the runner is configured exactly once.
 #     Changing url/name/labels after the first start has NO effect unless you
 #     remove the state dir yourself (see "State" below).
@@ -80,6 +81,13 @@ let
 
       token="$(< "$tokenFile")"
 
+      # GitHub PATs carry a known prefix (ghp_, github_pat_, gho_, ghu_, ghs_,
+      # ghr_); API registration tokens are bare. Pick the flag accordingly.
+      case "$token" in
+        ghp_*|github_pat_*|gho_*|ghu_*|ghs_*|ghr_*) tokenFlag="--pat" ;;
+        *) tokenFlag="--token" ;;
+      esac
+
       echo "[hm-github-runner] registering runner '${cfg.name}'"
       RUNNER_ROOT="$root" ${cfg.package}/bin/Runner.Listener configure \
         --unattended \
@@ -91,7 +99,7 @@ let
         ${lib.optionalString (cfg.runnerGroup != null)
           "--runnergroup ${lib.escapeShellArg cfg.runnerGroup}"} \
         ${lib.optionalString cfg.replace "--replace"} \
-        --pat "$token"
+        "$tokenFlag" "$token"
     '';
   };
 in
@@ -140,8 +148,10 @@ in
     tokenFile = lib.mkOption {
       type = lib.types.str;
       description = ''
-        Absolute path (as a STRING) to a file containing a single-line PAT
-        (no trailing newline).
+        Absolute path (as a STRING) to a file containing a single-line token
+        (no trailing newline): either a PAT (prefixed ghp_/github_pat_/...) or
+        a raw API registration token. The `--pat`/`--token` flag is picked
+        from the prefix.
 
         IMPORTANT: pass a string such as "/run/secrets/gh.token" or an
         agenix/sops-nix `.path`, NOT a path literal like ./token. A path literal

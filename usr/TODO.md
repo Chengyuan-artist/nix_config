@@ -1,4 +1,5 @@
 - [x] 管理zsh配置，插件，字体
 - [x] 管理kitty配置
 - [x] 管理niri以及desktop应用 
-- [ ] for yazi: 系统反色快捷键
+- [x] for yazi: 系统反色快捷键
+- [ ] github-runner入口配置，改成build.nix之类的入口

@@ -277,3 +277,6 @@ include optional=true "dms/outputs.kdl"
 include optional=true "dms/cursor.kdl"
 include optional=true "dms/input.kdl"
 include "dms/windowrules.kdl"
+
+// 本机专属覆盖：该文件不纳入 git，其他机器上不存在（optional=true 会静默跳过）
+include optional=true "host.kdl"

@@ -68,6 +68,7 @@ binds {
     Mod+U { focus-workspace-down; }
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp cooldown-ms=150 { focus-workspace-up; }
+    Mod+A hotkey-overlay-title="Toggle Floating" { toggle-window-floating; }
     Mod+BracketLeft { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
     Mod+C { center-column; }

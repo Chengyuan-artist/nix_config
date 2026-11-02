@@ -1,0 +1,24 @@
+{
+  "pins": {
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "release-26.05",
+      "submodules": false,
+      "revision": "24f2190587513b9c2f73db112a17844ae912d965",
+      "url": "https://github.com/nix-community/home-manager/archive/24f2190587513b9c2f73db112a17844ae912d965.tar.gz",
+      "hash": "sha256-199i7ubVSXTMl+0AAlL7cVCXSjcI+jWByMcimYjeMX0="
+    },
+    "nixpkgs": {
+      "type": "Channel",
+      "name": "nixos-26.05",
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13375.9bb52223f4f6/nixexprs.tar.xz",
+      "hash": "sha256-GVeZeBj2vr6j0bZwjpRDc2OSQEq23xXmcjkYSqZ5ycM="
+    }
+  },
+  "version": 7
+}

@@ -23,6 +23,7 @@
   imports = [
     ./nvim
     ./clash
+    ./tailscale
     ./zsh
     ./kitty
     ./yazi.nix

@@ -43,6 +43,7 @@
     ./snacks
     ./mini-nvim.nix
     ./blink-cmp.nix
+    ./auto-sessions.nix
   ];
 
   programs.neovim.extraPackages = [

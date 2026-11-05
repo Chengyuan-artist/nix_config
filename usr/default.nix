@@ -78,6 +78,7 @@
     pkgs.drawio
     pkgs.xvfb-run
     pkgs.lazygit
+    pkgs.npins
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

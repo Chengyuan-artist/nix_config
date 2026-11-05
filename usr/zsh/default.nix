@@ -51,6 +51,9 @@
       # `-` are boundaries. This makes URL/path movement in zsh line up with
       # Neovim's small-word motions (`w`/`b`/`e`).
       WORDCHARS=_
+
+      # To allow unfree nix packages
+      export NIXPKGS_ALLOW_UNFREE=1
     '';
 
     shellAliases = {

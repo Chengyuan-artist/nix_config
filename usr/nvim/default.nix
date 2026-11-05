@@ -44,6 +44,7 @@
     ./mini-nvim.nix
     ./blink-cmp.nix
     ./auto-sessions.nix
+    ./venn-nvim.nix
   ];
 
   programs.neovim.extraPackages = [

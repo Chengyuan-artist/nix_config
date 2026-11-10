@@ -22,13 +22,13 @@
 
   imports = [
     ./nvim
+    ./nvim-ext
     ./clash
     ./tailscale
     ./zsh
     ./kitty
     ./yazi.nix
     ../modules
-    ./syncthing-gist-ignore.nix
     ./pages-ci.nix
   ];
 
@@ -69,7 +69,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     pkgs.nil
-    pkgs.zig
     pkgs.wl-clipboard
     pkgs.man-pages
     pkgs.wget

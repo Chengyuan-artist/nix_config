@@ -3,7 +3,7 @@
   imports = [
     ./metals.nix
     # zig
-    {programs.neovim={initLua="vim.lsp.enable('zls')\n";extraPackages=[pkgs.zls];};}
+    {programs.neovim={initLua="vim.lsp.enable('zls')\n";extraPackages=[pkgs.zls pkgs.zig];};}
     # nix
     {programs.neovim={initLua="vim.lsp.enable('nixd')\n";extraPackages=[pkgs.nixd];};}
     # python

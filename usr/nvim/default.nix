@@ -39,7 +39,6 @@
   };
 
   imports = [
-    ./lsp
     ./snacks
     ./mini-nvim.nix
     ./blink-cmp.nix

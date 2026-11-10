@@ -1,4 +1,7 @@
 { lib, ... }: {
+  imports = [
+    ./syncthing-gist-ignore.nix
+  ];
   options = {
     proxyPort = lib.mkOption {
       type = lib.types.number;

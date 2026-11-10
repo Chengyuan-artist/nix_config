@@ -3,6 +3,8 @@
   programs.neovim = {
     initLua = /*lua*/ ''
       vim.lsp.config("metals", {
+        -- Xiangshan kuminghuv3's mill will use build.mill, so add the marker here to let metals be able to recognize
+        root_markers = { "build.sbt", { "build.sc", "build.mill" }, { "build.gradle", "build.gradle.kts" }, "pom.xml" },
         init_options = {
           statusBarProvider = "off",
         },

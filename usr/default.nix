@@ -141,6 +141,16 @@
   programs.man.enable = true;
   programs.info.enable = true;
 
+  programs.zsh.initContent = ''
+    . ${toString ../scripts/main.sh}
+  '';
+
+  programs.zsh.envExtra = /*bash*/ ''
+    if [[ -e "$HOME/.config/npins/nixpkgs" && -e "$HOME/.config/npins/home-manager" ]]; then
+      export NIX_PATH="nixpkgs=$HOME/.config/npins/nixpkgs:home-manager=$HOME/.config/npins/home-manager"
+    fi
+  '';
+
   # 中日韩字体优先级：简体中文 > 繁体中文 > 日文
   fonts.fontconfig.defaultFonts = {
     sansSerif = [ "Noto Sans CJK SC" "Noto Sans CJK TC" "Noto Sans CJK JP" ];

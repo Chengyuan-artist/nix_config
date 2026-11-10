@@ -6,5 +6,5 @@
   - [ ] c support
   - [x] markdown support
     - [x] align tools    
-- [ ] vim sessions management
-- [ ] git diff/graph tools
+- [x] vim sessions management
+- [x] git diff/graph tools: using lazygit

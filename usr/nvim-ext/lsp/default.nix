@@ -36,8 +36,9 @@
           vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count= 1, float=true, severity = { min = vim.diagnostic.severity.WARN } }) end)
           vim.keymap.set('n', '[D', function() vim.diagnostic.jump({ count=-1, float=true, severity = { min = vim.diagnostic.severity.INFO } }) end)
           vim.keymap.set('n', ']D', function() vim.diagnostic.jump({ count= 1, float=true, severity = { min = vim.diagnostic.severity.INFO } }) end)
-          vim.keymap.set('n', '<space>d', Snacks.picker.diagnostics_buffer)
-          vim.keymap.set('n', '<space>D', Snacks.picker.diagnostics)
+          -- Snacks is initialized later; resolve its pickers when invoked.
+          vim.keymap.set('n', '<space>d', function() Snacks.picker.diagnostics_buffer() end)
+          vim.keymap.set('n', '<space>D', function() Snacks.picker.diagnostics() end)
           vim.diagnostic.config({
             float = {
               source = true,  -- Show the source (LSP server name)

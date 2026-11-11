@@ -4,6 +4,7 @@
     ./nvim-ext
     ./kitty
     ./yazi.nix
+    ./pages-ci.nix
   ];
   home.packages = [
     pkgs.wl-clipboard

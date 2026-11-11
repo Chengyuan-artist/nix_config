@@ -20,10 +20,10 @@ in {
   
   services.github-runner = {
     enable = true;
-    url = "https://github.com/Chengyuan-artist/bt-notes";
+    url = "https://github.com/OpenXiangShan-Nanhu/bt-notes";
     name = runner;
     labels = [ "pages-ci" ];
-    tokenFile = "${config.xdg.configHome}/github-runner/hm-runner.token";
+    tokenFile = "${config.xdg.configHome}/github-runner/bt-notes.token";
     extraPackages = with pkgs; [
       drawio
       xvfb-run

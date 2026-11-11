@@ -60,9 +60,23 @@
       '';
     }
     {
-      plugin = pkgs.vimPlugins.nvim-treesitter.withAllGrammars;
+      plugin = pkgs.vimPlugins.nvim-treesitter.withPlugins (_:
+        pkgs.vimPlugins.nvim-treesitter.allGrammars ++ [
+          (pkgs.tree-sitter.buildGrammar {
+            language = "veryl";
+            version = "0.1.0";
+            src = (import ../../npins).tree-sitter-veryl;
+          })
+        ]);
       type = "lua";
       config = ''
+        vim.filetype.add({ extension = {
+          veryl = "veryl",
+          v = "verilog",
+          vh = "verilog",
+          sv = "systemverilog",
+          svh = "systemverilog",
+        } })
         vim.api.nvim_create_autocmd("FileType", {
           callback = function(args) pcall(vim.treesitter.start, args.buf) end,
         })

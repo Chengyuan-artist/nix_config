@@ -18,6 +18,19 @@
       "name": "nixos-26.05",
       "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13375.9bb52223f4f6/nixexprs.tar.xz",
       "hash": "sha256-GVeZeBj2vr6j0bZwjpRDc2OSQEq23xXmcjkYSqZ5ycM="
+    },
+    "tree-sitter-veryl": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "veryl-lang",
+        "repo": "tree-sitter-veryl"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "f38156e6fa97e7386cdfbcbcc537dc970a13c3ce",
+      "url": "https://github.com/veryl-lang/tree-sitter-veryl/archive/f38156e6fa97e7386cdfbcbcc537dc970a13c3ce.tar.gz",
+      "hash": "sha256-EoxR2W3Kc+U/kw7TQLPZOu8KvYZX5KcuFUfwSsP+5n0="
     }
   },
   "version": 7

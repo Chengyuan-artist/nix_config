@@ -8,6 +8,10 @@
     {programs.neovim={initLua="vim.lsp.enable('nixd')\n";extraPackages=[pkgs.nixd];};}
     # python
     {programs.neovim={initLua="vim.lsp.enable('pyright')\n";extraPackages=[pkgs.pyright];};}
+    # veryl
+    {programs.neovim={initLua="vim.lsp.enable('veryl_ls')\n";extraPackages=[pkgs.veryl];};}
+    # verilog / systemverilog
+    {programs.neovim={initLua="vim.lsp.enable('verible')\n";extraPackages=[pkgs.verible];};}
     # emmylua
     {
       programs.neovim = {

@@ -1,10 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.kitty = {
     enable = true;
-    # Arch（非 NixOS）上 nixpkgs 的 kitty 找不到系统 Mesa/EGL 驱动，
-    # EGL/GLX 初始化失败。只管理配置，二进制用系统的 /usr/bin/kitty。
-    package = null;
 
     font = {
       name = "MesloLGS Nerd Font";
